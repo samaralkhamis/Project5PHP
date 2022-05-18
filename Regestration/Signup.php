@@ -4,14 +4,7 @@
      $reg_name="/^([a-zA-Z' ]+)$/";
      $reg_PhoneNum="/^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})?[-.\\s]?([0-9]{4})$/";
      $reg_email="/^[a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1}([a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1})*[a-zA-Z0-9]@[a-zA-Z0-9][-\.]{0,1}([a-zA-Z][-\.]{0,1})*[a-zA-Z0-9]\.[a-zA-Z0-9]{1,}([\.\-]{0,1}[a-zA-Z]){0,}[a-zA-Z0-9]{0,}$/i";
-     $firstName_done=false;
-     $SecName_done=false;
-     $LastName_done=false;
-     $DateOfBirt_done=false;
-     $Number_done=false;
-     $Email_done=false;
-     $Pass_done=false;
-     $ConfirmPassword_done=false;
+     $firstName_done= $SecName_done= $LastName_done= $DateOfBirt_done= $Number_done= $Email_done= $Pass_done= $ConfirmPassword_done= "";
 
 
      if (isset($_POST['submit'])){

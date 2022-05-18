@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    welcome user
+    Welcome "home page"
 </body>
 </html>

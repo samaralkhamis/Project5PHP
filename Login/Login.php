@@ -23,7 +23,7 @@ if (isset($_POST['submit'])){
                 if(($loginPassword==$row['Password'])){
                     $loginPassword_result="<span style=' color:green'>✅ Correct Password</span><br>";
                     $loginPassword_correct=true;
-
+                   
                 }else{
                     $loginPassword_result="<span style=' color:red'>❌Incorrect Password</span><br>";
                     $loginPassword_correct=false;
@@ -33,8 +33,8 @@ if (isset($_POST['submit'])){
     }   
     
     if($loginEmail_correct && $loginPassword_correct)
-    {
-        header('location:../Welcome/Welcome.php');
+        header('location:../User/User.php?id='.$row["id"].'');
+       
         $row['last-login']= date("d-m-Y - h:i:sa");
         
     }else
@@ -59,7 +59,7 @@ if (isset($_POST['submit'])){
 	}
 	if ($adminEmail_correct && $adminPass_correct ){
 		header('location:../Admin/Admin.php');
-	}}
+	}
 
 ?>
 <!DOCTYPE html>

@@ -25,19 +25,18 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Users Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New User</a>
+                    <div class="mt-5 mb-5 clearfix">
+                        <h1 class="pull-left">User Information</h1>
                     </div>
                     <?php
                     // Include config file
                     include_once '../Configration/connection.php';
-                    
+                  
                     // Attempt select query execution
-                    $sql = "SELECT * FROM register;";
+                    $sql = "SELECT * FROM register WHERE id='1' ;";
                     if($result = mysqli_query($conn, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo '<table class="table table-bordered table-striped">';
@@ -70,8 +69,7 @@
                                         echo "<td>" . $row['con_Password'] . "</td>";
 
                                         echo "<td>";
-                                            echo '<a href="update.php?id='. $row['id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                                            echo '<a href="delete.php?id='. $row['id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                            echo '<a href="Update_info.php?id='. $row['id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
                                         echo "</td>";
                                     echo "</tr>";
                                 }

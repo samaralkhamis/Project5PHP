@@ -99,7 +99,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $sql="UPDATE register SET First_Name='$fname', Sec_Name='$sname', Last_Name='$lname', DOB='$dob', Phone_Num='$phone',  Email='$email', Password='$pass', con_Password='$con_pass' WHERE id=$_GET[id];";
         
         if(mysqli_query($conn, $sql)){
-            header("location:Admin.php");
+            header("location:User.php");
             }else{
             echo "Eroor: ". $sql."<br>". mysqli_error($conn);}}
     else{

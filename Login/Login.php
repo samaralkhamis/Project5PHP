@@ -32,9 +32,9 @@ if (isset($_POST['submit'])){
         
     }   
     
-    if($loginEmail_correct && $loginPassword_correct)
-        header('location:../User/User.php?id='.$row["id"].'');
-       
+    if($loginEmail_correct && $loginPassword_correct){
+        header('location:../User/User.php?id='. $row['id'] .'');
+      
         $row['last-login']= date("d-m-Y - h:i:sa");
         
     }else
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])){
 	if ($adminEmail_correct && $adminPass_correct ){
 		header('location:../Admin/Admin.php');
 	}
-
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

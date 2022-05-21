@@ -1,10 +1,11 @@
 <?php
+session_start();
      include_once '../Configration/connection.php';
     
      $reg_name="/^([a-zA-Z' ]+)$/";
      $reg_PhoneNum="/^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})?[-.\\s]?([0-9]{4})$/";
      $reg_email="/^[a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1}([a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1})*[a-zA-Z0-9]@[a-zA-Z0-9][-\.]{0,1}([a-zA-Z][-\.]{0,1})*[a-zA-Z0-9]\.[a-zA-Z0-9]{1,}([\.\-]{0,1}[a-zA-Z]){0,}[a-zA-Z0-9]{0,}$/i";
-     $firstName_done= $SecName_done= $LastName_done= $DateOfBirt_done= $Number_done= $Email_done= $Pass_done= $ConfirmPassword_done= "";
+     $firstName_done= $SecName_done= $LastName_done= $DateOfBirt_done= $Number_done= $Email_done= $Pass_done= $ConfirmPassword_done="";
 
 
      if (isset($_POST['submit'])){

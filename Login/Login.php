@@ -1,11 +1,11 @@
 <?php
 session_start();
 include_once '../Configration/connection.php';
-if (isset($_POST['submit'])){
+if (isset($_GET['submit'])){
      
-    $loginEmail=$_POST['loginEmail'];
+    $loginEmail=$_GET['loginEmail'];
     $_SESSION['email']=$loginEmail;
-    $loginPassword=$_POST['loginPassword'];
+    $loginPassword=$_GET['loginPassword'];
     $adminEmail_correct=true;
     $adminPass_correct=true;
     $loginEmail_correct =true;
@@ -33,7 +33,7 @@ if (isset($_POST['submit'])){
     }   
     
     if($loginEmail_correct && $loginPassword_correct){
-        header('location:../User/User.php?id='. $row['id'] .'');
+        header('location:../User/User.php');
       
         $row['last-login']= date("d-m-Y - h:i:sa");
         
@@ -71,7 +71,7 @@ if (isset($_POST['submit'])){
     <title>Login</title>
 </head>
 <body>
-        <form method="post">
+        <form method="get">
                 <h1 >Login</h1>
                 <p >Welcome back! Login with your credentials</p>
                 <label for="loginEmail">Email</label>
@@ -79,6 +79,7 @@ if (isset($_POST['submit'])){
                 <!--Email-->
                 <input type="email" name="loginEmail" id="loginEmail" class="form-control"  placeholder="Your Email" required><br>
                 <?php if(isset($loginEmail_result)){echo $loginEmail_result;}?>
+                
                 <br>
                 <!--Password-->
                 <label for="loginPassword">Password</label>

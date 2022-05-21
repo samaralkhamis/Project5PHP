@@ -24,34 +24,29 @@
     </script>
 </head>
 <body>
-        <div class="container">
+    <div class="wrapper">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2  style="text-align:center">Users Details</h2>
-                        <!-- <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New User</a> -->
+                        <h2 class="pull-left">Category Details</h2>
+                        <!-- <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Category</a> -->
                     </div>
                     <?php
                     // Include config file
                     include_once '../Configration/connection.php';
                     
                     // Attempt select query execution
-                    $sql = "SELECT * FROM register;";
+                    $sql = "SELECT * FROM categories;";
                     if($result = mysqli_query($conn, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo '<div class="table-responsive"> ';
                             echo '<table class="table table-secondary table-bordered">';
                                 echo "<thead>";
                                     echo "<tr>";
-                                        echo "<th>#</th>";
-                                        echo "<th>First Name</th>";
-                                        echo "<th>Secound Name</th>";
-                                        echo "<th>Family Name</th>";
-                                        echo "<th>Phone Number</th>";
-                                        echo "<th>Date of Birth</th>";
-                                        echo "<th>Email</th>";
-                                        echo "<th>Password</th>";
-                                        echo "<th>Confirm Password</th>";
+                                        echo "<th>ID</th>";
+                                        echo "<th>Category Name</th>";
+
 
                                     echo "</tr>";
                                 echo "</thead>";
@@ -59,19 +54,12 @@
                                 while($row = mysqli_fetch_array($result)){
 
                                     echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
-                                        echo "<td>" . $row['First_Name'] . "</td>";
-                                        echo "<td>" . $row['Sec_Name'] . "</td>";
-                                        echo "<td>" . $row['Last_Name'] . "</td>";
-                                        echo "<td>" . $row['Phone_Num'] . "</td>";
-                                        echo "<td>" . $row['DOB'] . "</td>";
-                                        echo "<td>" . $row['Email'] . "</td>";
-                                        echo "<td>" . $row['Password'] . "</td>";
-                                        echo "<td>" . $row['con_Password'] . "</td>";
+                                        echo "<td style='width:20px'>" . $row['category_id'] . "</td>";
+                                        echo "<td>" . $row['category_name'] . "</td>";
 
                                         // echo "<td>";
-                                            // echo '<a href="update.php?id='. $row['id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                                            // echo '<a href="delete.php?id='. $row['id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                        //     echo '<a href="update.php?category_id='. $row['category_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        //     echo '<a href="delete.php?category_id='. $row['category_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                         // echo "</td>";
                                     echo "</tr>";
                                 }
@@ -82,7 +70,7 @@
                         } else{
                             echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
                         }
-                    } else{
+                    }else{
                         echo "Oops! Something went wrong. Please try again later.";
                     }
  

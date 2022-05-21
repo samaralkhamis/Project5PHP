@@ -151,7 +151,8 @@ font-family: 'Patrick Hand', cursive;">
       
   
    
-<img src="https://i.pinimg.com/originals/bb/2e/0e/bb2e0eb86e7705dc5379c23bf8a5ae1e.gif" alt="" class="anima bb">
+    <img src="https://images.squarespace-cdn.com/content/v1/5733027f2fe131d8f5609c06/1588349735296-3LAESYK90RU2VTVLKQQR/girl_on_swing_somebodyelsa.gif" alt="" class="anima bb" style="width:360px; height: 650px; margin-top: 44%;
+    margin-left:70%;">
 <img src="https://3u26hb1g25wn1xwo8g186fnd-wpengine.netdna-ssl.com/files/2019/06/noodles-1.gif" alt="" class="anima tt">
     <form  method="post" class="reg-form">
     <fieldset>

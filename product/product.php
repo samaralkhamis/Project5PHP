@@ -51,7 +51,7 @@ if(isset($_GET['add'])){
  <li><a href="../Login/Login.php">Login</a></li>
  <li><a href="../Regestration/Signup.php">Sign Up</a></li>
  <li><a href="../User/User.php"><i class="fa fa-user" aria-hidden="true"></i></a></li>
- <li><a href=""><img style="position:absolute; margin-top:-2.5%; width:4%" src="../img/cart2.png" ></a></li><br><br>
+ <li><a href="../Cart/cart.php"><img style="position:absolute; margin-top:-2.5%; width:4%" src="../img/cart2.png" ></a></li><br><br>
 <li><select class="custom-select custom-select-sm mb-3">
      <option selected disabled> Change Category </option>
         <?php	$r ="SELECT * FROM categories";
@@ -162,7 +162,7 @@ if(isset($_GET['add'])){
                         // changing the position of the section product
 						echo '  <ul class="pagination" style="justify-content: center!important;">';
 						if ($page > 1) {
-							echo '<li  class="paginate_button page-item previous" id="zero_config_previous"><a href="store.php?page=' . ($page - 1) . '" aria-controls="zero_config" data-dt-idx="0" tabindex="0" class="page-link"style="background-color: #bd2130;border-color: #bd2130!important;"  >Previous</a></li>';
+							echo '<li  class="paginate_button page-item previous" id="zero_config_previous"><a href="store.php?page=' . ($page - 1) . '" aria-controls="zero_config" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>';
 						}
 						for ($i = 1; $i < $total_pages; $i++) {
 							if ($i == $page) {

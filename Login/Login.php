@@ -58,7 +58,7 @@ if (isset($_GET['submit'])){
 		$adminEmail_correct=false;
 	}
 	if ($adminEmail_correct && $adminPass_correct ){
-		header('location:../Admin/Admin.php');
+		header('location:../Admindashboard.php');
 	}
 }
 ?>

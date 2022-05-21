@@ -2,31 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../Welcome/style1.css">
-
-    <style>
-        .wrapper{
-            width: 600px;
-            margin: 0 auto;
-        }
-        table tr td:last-child{
-            width: 120px;
-        }
-    </style>
-    <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
-        });
-    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Patrick+Hand&family=Poppins:wght@100;200;300;400&family=Smooch&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style2.css">
+    <link rel="stylesheet" href="about.css">
+    <title>About Us</title>
 </head>
 <body>
-<div class="navbar">
+    
+    <div class="navbar">
         <div class="logo"><img src="../img/logo_kids.gif"width="100px"> </div>
        
         <nav style="font-family: 'Nunito', sans-serif;
@@ -46,78 +37,65 @@
  </ul> <hr style="width:70%; margin-left: 31%;">
         </nav>
      </div>
+     
+    <section class="about" id="about">
         <div class="container">
+            <div class="heading text-center">
+                <h2>About
+                    <span>Us</span></h2>
+            </div>
             <div class="row">
-                <div class="col-md-12" style="margin-bottom:5%">
-                    <div class="mt-5 mb-5 clearfix">
-                        <h1 style="text-align:center">User Information</h1>
-                    </div>
-                    <?php
-                    session_start();
-                    // Include config file
-                    include_once '../Configration/connection.php';
-                    $email= $_SESSION['email'];
-                    // Attempt select query execution
-                    $sql ="SELECT * FROM register WHERE  Email='$email'; ";
-                    if($result = mysqli_query($conn, $sql)){
-                        if(mysqli_num_rows($result) > 0){
-                            echo '<div class="table-responsive"> ';
-                            echo '<table class="table  table-warning table-bordered">';
-                                echo "<thead>";
-                                    echo "<tr>";
-                                        echo "<th>#</th>";
-                                        echo "<th>First Name</th>";
-                                        echo "<th>Secound Name</th>";
-                                        echo "<th>Family Name</th>";
-                                        echo "<th>Phone Number</th>";
-                                        echo "<th>Date of Birth</th>";
-                                        echo "<th>Email</th>";
-                                        echo "<th>Password</th>";
-                                        echo "<th>Confirm Password</th>";
-                                        echo "<th>Edit </th>";
-
-                                    echo "</tr>";
-                                echo "</thead>";
-                                echo "<tbody>";
-                                while($row = mysqli_fetch_array($result)){
-
-                                    echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
-                                        echo "<td>" . $row['First_Name'] . "</td>";
-                                        echo "<td>" . $row['Sec_Name'] . "</td>";
-                                        echo "<td>" . $row['Last_Name'] . "</td>";
-                                        echo "<td>" . $row['Phone_Num'] . "</td>";
-                                        echo "<td>" . $row['DOB'] . "</td>";
-                                        echo "<td>" . $row['Email'] . "</td>";
-                                        echo "<td>" . $row['Password'] . "</td>";
-                                        echo "<td>" . $row['con_Password'] . "</td>";
-
-                                        echo "<td>";
-                                            echo '<a href="Update_info.php?id='. $row['id'] .'" style="text_align:center"class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                                        echo "</td>";
-                                    echo "</tr>";
-                                }
-                                echo "</tbody>";                            
-                            echo "</table>";
-                            // Free result set
-                            mysqli_free_result($result);
-                        } else{
-                            echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
-                        }
-                    } else{
-                        echo "Oops! Something went wrong. Please try again later.";
-                    }
+                <div class="col-lg-6">
+                    <img src="../img/aboutus3.jpg" alt="about" class="img-fluid" width="100%" id="aboutus-image">
+                </div>
+                <div class="col-lg-6">
+                    <h3 id="about-us-section">KIDS STORE : Where kids are a big deal! </h3>
+                    <p>Our website is the beloved brand of kids all over the world…and we know how to have lotsa fun! You can explore awesome DIY play activities, toy reviews, printable fun and, of course, SO many toys! The hottest, the gotta-have-’ems, the new favorite besties and more. Explore incredible collections of kids’ toys online, here at Kids Toys!</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>Awesome Design</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>
+                                Creative Design</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>Better Client Service</h4>
+                        </div>
  
-                    // Close connection
-                    mysqli_close($conn);
-                    ?>
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>
+                                Speed And Flexibility</h4>
+                        </div>
+                    </div>
                 </div>
-            </div>        
-            </div> 
-                </div>
-            <div class="container-fluied">
-   <!-- Footer -->
-   <footer
+            </div>
+        </div>
+
+      <!---------------- news-letter-section ----------------------->
+        <section class="news-letter" id="News-letter">
+            <div class="news ">
+              <div class="container">
+                <h1 class="news-heading">Subscribe To Get The Latest <br> News About Us</h1>
+                <p class="des how-de">Get the Latest news about toys , drop your <br> email below to
+                  get daliy update about us</p>
+                <form action="">
+                  <input type="email"  maxlength="50" required placeholder="Enter your email address">
+                  <button class="bt">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </section>
+    </section>
+
+    <!-- //////////////////footer -->
+<div class="container-fluied">
+    <!-- Footer -->
+    <footer
             class="text-center text-lg-start text-primary"
             style="background: linear-gradient(to right, rgba(216, 112, 147, 0.377),rgba(216, 112, 147, 0.235), rgba(216, 112, 147, 0.087));"           
             >
@@ -234,5 +212,9 @@
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
+
+
+
+
 </body>
 </html>

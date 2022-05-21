@@ -36,9 +36,10 @@
                         <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                     </div>
                     <?php
+
                     // Include config file
                     include_once '../Configration/connection.php';
-                    
+                  
                     // Attempt select query execution
                     $sql = "SELECT * FROM products;";
                     if($result = mysqli_query($conn, $sql)){

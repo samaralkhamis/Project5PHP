@@ -1,9 +1,10 @@
 <?php
+session_start();
 // Include config file
 include_once '../Configration/connection.php';
  
 // Define variables and initialize with empty values
-$product_name = $description =$price = $status = $img= "";
+$product_name = $description =$price = $status = $img=  "";
 $productname_err = $description_err = $price_err = $status_err =$img_err= "";
 
  
@@ -27,15 +28,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }else{
         $price = $input_name1;
     }
-
-    // $input_name2 = trim($_POST["status"]);
-    // if(empty($input_name2)){
-    //     $status_err = "Please Enter an Update a Product status.";
-    // }elseif(!(($input_name2 === 0)||($input_name2 === 1))){
-    //     $status_err = "Please enter a valid Update Product status.";
-    // }else{
-    //     $status = $input_name2;
-    // }
+    
+    $input_name2 = trim($_POST["status"]);
+    $_SESSION['status']=$input_name2;
+    echo $input_name2;
+    if(empty($input_name2)){
+        $status_err = "Please Enter an Update a Product status.";
+    }elseif((($input_name2 != 0)&&($input_name2 != 1))){
+        $status_err = "Please enter a valid Update Product status.";
+    }else{
+        $status = $input_name2;
+    }
 
     $input3 = trim($_POST["img"]);
     if(empty($input3)){
@@ -45,10 +48,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($productname_err) &&  empty($description_err) && empty($price_err) && empty($img_err)){
+    if(empty($productname_err) &&  empty($description_err) && empty($price_err) && empty($img_err) && empty($status_err)){
         // Prepare an update statement
         
-        $sql="UPDATE products SET product_name='$product_name', description='$description' , price='$price' ,img='$img'  WHERE product_id=$_GET[product_id];";
+        $sql="UPDATE products SET product_name='$product_name', description='$description' , price='$price' ,img='$img', status='$status'  WHERE product_id=$_GET[product_id];";
         
         if(mysqli_query($conn, $sql)){
             header("location:Admin_pro.php");
@@ -161,12 +164,12 @@ if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
                             <span class="invalid-feedback"><?php echo $price_err ;?></span>
                         </div>
 
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <label>Status</label>
                             
-                            <input type="select" name="status" class="form-control <?php #echo (!empty($status_err)) ? 'is-invalid' : ''; ?>" value="<?php# echo $status; ?>">
-                            <span class="invalid-feedback"><?php# echo $status_err ;?></span>
-                        </div> -->
+                            <input type="number" name="status" class="form-control <?php echo (!empty($status_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $status; ?>">
+                            <span class="invalid-feedback"><?php echo $status_err ;?></span>
+                        </div>
 
                        <div class="form-group">
                             <label>img</label>

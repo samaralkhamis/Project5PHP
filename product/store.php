@@ -100,7 +100,7 @@ if(isset($_GET['add'])){
                                 </div> 
                                 <figcaption class="info-wrap">
                                     <div class="fix-height">
-                                        <a href="product-detail.php?id=<?php echo $row['product_id']; ?>"
+                                        <a href="singleproduct.php?id=<?php echo $row['product_id']; ?>"
                                             class="title"><?php echo $row['product_name']; ?></a>
 
                                         <div class="price-wrap mt-2">

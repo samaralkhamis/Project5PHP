@@ -85,8 +85,7 @@ if(isset($_GET['add'])){
                                     <img class="prod" src="<?php echo $row['img'];?>">
                                     <!-- ################################################### -->
                                     <label><?php 
-                                   $cat= "SELECT categories.category_name FROM categories
-                                   INNER JOIN products
+                                   $cat= "SELECT categories.category_name FROM categories INNER JOIN products
                                    ON products.category_id=categories.category_id;";
                                    $res=mysqli_query($conn, $cat);
                                 
@@ -95,7 +94,7 @@ if(isset($_GET['add'])){
                                 </div> 
                                 <figcaption class="info-wrap">
                                     <div class="fix-height">
-                                        <a href="product-detail.php?id=<?php echo $row['product_id']; ?>"
+                                        <a href="singleproduct.php?id=<?php echo $row['product_id']; ?>"
                                             class="title"><?php echo $row['product_name']; ?></a>
 
                                         <div class="price-wrap mt-2">

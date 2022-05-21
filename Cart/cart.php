@@ -86,6 +86,13 @@
                $update_quantity_query = mysqli_query($conn,$update);
    
             };
+
+            if(isset($_GET['remove'])){
+              $update_value = $_GET['remove'];
+              $update= "DELETE FROM cart WHERE product_id ='$update_value'";
+              $update_quantity_query = mysqli_query($conn,$update);
+  
+           };
             $stmt = $conn->prepare('SELECT * FROM products INNER JOIN cart ON products.product_id=cart.product_id');
                 $stmt->execute();
                 $result = $stmt->get_result();
@@ -105,14 +112,14 @@
                 <td>
                   <!-- <input type="number" class="form-control itemQty" value="" style="width:75px;"> -->
                   <form  method="post">
-                  <input type="hidden" name="update_quantity_id" value="<?php echo $fetch_cart['product_id']; ?>" >
-                  <input type="number" name="update_quantity" min="1"  value="<?php echo $fetch_cart['quantity']; ?>" >
+                  <input type="hidden" name="update_quantity_id" value="<?php echo $row['product_id']; ?>" >
+                  <input type="number" name="update_quantity" min="1"  value="<?php echo $row['quantity']; ?>" >
                   <input type="submit" value="update" name="update_update_btn">
                </form>
                 </td>
                 <td><i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;<?php echo $sub_total = ($row['price'] * $row['quantity']);?></td>
                 <td>
-                  <a href="action.php?remove=<?= $row['product_id'] ?>" class="text-danger lead" onclick="return confirm('Are you sure want to remove this item?');"><i class="fas fa-trash-alt"></i></a>
+                  <a href="cart.php?remove=<?= $row['product_id'] ?>" class="text-danger lead" onclick="return confirm('Are you sure want to remove this item?');"><i class="fas fa-trash-alt"></i></a>
                 </td>
               </tr>
               <?php $grand_total += $sub_total;

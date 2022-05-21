@@ -181,7 +181,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Patrick+Hand&family=Poppins:wght@100;200;300;400&family=Smooch&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../Welcome/style1.css">
+        <link rel="stylesheet" href="../style2.css">
 
     <style>
         .wrapper{
@@ -278,7 +278,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      <!-- Footer -->
    <footer
             class="text-center text-lg-start text-primary"
-            style="background: linear-gradient(to right, rgba(216, 112, 147, 0.377),rgba(216, 112, 147, 0.235), rgba(216, 112, 147, 0.087));"           
+            style="background: linear-gradient(to right, rgba(216, 112, 147, 0.377),rgba(216, 112, 147, 0.235), rgba(216, 112, 147, 0.087)); margin-top:7%"           
             >
       <!-- Grid container -->
       <div class="container p-4 pb-0">

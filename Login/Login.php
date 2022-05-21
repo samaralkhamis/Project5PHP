@@ -113,7 +113,7 @@ font-family: 'Patrick Hand', cursive;">
                 <input type="password" name="loginPassword" id="loginPassword"   placeholder="Password" required><br>
                 <?php if(isset($loginPassword_result)){echo $loginPassword_result;}?>
                 <br>
-                <input type="submit" value="Submit" name="submit">
+                <input class="btn btn-warning"type="submit" value="Submit" name="submit">
 <br><br>
                 <span> <label class="link"> Don`t have an account !!<a href='../Regestration/Signup.php'>Sign Up</a></label></span><br>
                 </div>

@@ -11,13 +11,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Cart</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css%22%3E">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Patrick+Hand&family=Poppins:wght@100;200;300;400&family=Smooch&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css%22%3E">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Patrick+Hand&family=Poppins:wght@100;200;300;400&family=Smooch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style2.css">
 </head>
 
@@ -70,6 +70,7 @@
                 <th>Product</th>
                 <th>Price</th>
                 <th>Quantity</th>
+                <th>Discount Code</th>
                 <th>Total Price</th>
                 <th>
                   <a href="cart.php?clear=all" class="badge-danger badge p-1" onclick="return confirm('Are you sure want to clear your cart?');">
@@ -117,6 +118,7 @@
                 <td>
                   $ &nbsp;&nbsp;<?= number_format($row['price'],2); ?>
                 </td>
+                
                 <input type="hidden" class="pprice" value="<?= $row['price'] ?>">
                 <td>
                   <!-- <input type="number" class="form-control itemQty" value="" style="width:75px;"> -->
@@ -125,24 +127,33 @@
                   <input type="number" name="update_quantity" min="1"  value="<?php echo $row['quantity']; ?>" >
                   <input type="submit" value="update" name="update_update_btn">
                </form>
+              
+              </td><?php $sub_total = ($row['price'] * $row['quantity']);?>
+               <?php      $grand_total += $sub_total;?>
+                <td><?php if($row['code']== "MST2"){
+                          echo "- 10%" ;
+                         }else{echo "No Discount";}?>
                 </td>
-                <td>$ &nbsp;&nbsp;<?php echo $sub_total = ($row['price'] * $row['quantity']);?></td>
+                
+                <td>$ &nbsp;&nbsp;<?php  if($row['code']== "MST2"){
+                                        echo ($sub_total * (100-10) / 100);
+                                        }else{echo $sub_total;} ?> </td>
                 <td>
                   <a href="cart.php?remove=<?= $row['product_id'] ?>" class="text-danger lead" onclick="return confirm('Are you sure want to remove this item?');">
                   <i class="fa fa-trash" aria-hidden="true"></i></a>
                 </td>
               </tr>
-              <?php $grand_total += $sub_total;
               
-              ?>
+              
               <?php endwhile; ?>
               <tr>
                 <td colspan="3">
                   <a href="../product/product.php" class="btn btn-success"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Continue
                     Shopping</a>
-                </td>
+                </td><td></td>
                 <td colspan="2"><b>Grand Total</b></td>
-                <td><b><i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;<?php echo $grand_total; ?></b></td>
+                <td><b>$&nbsp;&nbsp;<?php echo $grand_total; ?></b></td>
+                
                 <td>
                   <a href="../checkout/checkout.php" class="btn btn-info <?= ($grand_total > 1) ? '' : 'disabled'; ?>"><i class="far fa-credit-card"></i>&nbsp;&nbsp;Checkout</a>
                 </td>

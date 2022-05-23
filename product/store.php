@@ -2,6 +2,26 @@
 
 include_once '../Configration/connection.php';
 
+if (!isset($_GET['id'])) {
+  $homepath = '../index.html';
+  $prodpath = '../product.php';
+  $check= '../checkout/checkout.php' ;
+  $shoppath = '../product.php';
+  $cartpath = '../Cart/cart.php';
+  $uuser= '../User/User.php';
+  $about='../Welcome/AboutUs.html';
+  $cont='../Welcome/ContactUs.html';
+  }else{
+    $sign = $_GET['id'];
+    $homepath = '../index.html?id=' . $sign;
+    $shoppath = '../product.php?id=' . $sign;
+    $cartpath = '../Cart/cart.php?id=' . $sign;
+    $uuser= '../User/User.php?id=' . $sign ;
+    $check= '../checkout/checkout.php?id=' . $sign ;
+    $about='../Welcome/AboutUs.html?id='. $sign ;
+    $cont='../Welcome/ContactUs.html?id='. $sign ;
+  }
+
 
 if(isset($_GET['add'])){
   $quantity=$_GET['quantity'];
@@ -43,33 +63,24 @@ if(isset($_GET['add'])){
  font-family: 'Patrick Hand', cursive;">
  <ul style="margin-right: 5%; font-family: 'Nunito', sans-serif;
  font-family: 'Patrick Hand', cursive;">
- <li><a href="../index.html">Home</a></li>
- <li><a href="../product/product.php">Products</a></li>
- <li><a href="../Welcome/ContactUs.html">Contact Us</a></li>
- <li><a href="../Welcome/AboutUs.html">About US</a></li>
- 
- <li><a href="../Login/Login.php">Login</a></li>
- <li><a href="../Regestration/Signup.php">Sign Up</a></li>
- <li><a href="../User/User.php"><i class="fa fa-user" aria-hidden="true"></i></a></li>
- <li><a href="../Cart/cart.php"><img style="position:absolute; margin-top:-2.5%; width:4%" src="../img/cart2.png" ></a></li><br><br>
-<li><select class="custom-select custom-select-sm mb-3">
-     <option selected disabled> Change Category </option>
-        <?php	$r ="SELECT * FROM categories";
-         $res_category=mysqli_query($conn, $r);
-		while ($row = mysqli_fetch_array($res_category)) { ?>
-          <option><a href="category.php?category=<?php echo $row['category_id']; ?>"><?php echo $row['category_name'];?>
-             </a></option>
-         <?php
-		}
-          ?>
- </select></li>
- </ul> <hr style="width:70%; margin-left: 31%;">
-        </nav>
-     </div>
 
-</ul>
-       </nav>
-    </div>
+ <li><a href="<?php echo $homepath; ?>">Home</a></li>
+ <li><a href="<?php echo $shoppath; ?>">Products</a></li>
+ <li><a href="<?php echo $cont; ?>">Contact Us</a></li>
+ <li><a href="<?php echo $about; ?>">About US</a></li>
+ <?php if(!isset($_GET["id"])){
+                echo '<a href="../Login/Login.php">Login</a>
+                      <a href="../Regestration/Signup.php">Register</a>';
+              }else{
+                echo '<a href="../User/User.php?id='.$sign.'"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                echo '<a href="../index.html">Log Out</a>';
+              }
+              ?>
+ <li><a href="<?php echo $cartpath; ?>">cart</a></li><br><br>
+ </ul>
+  <hr style="width:70%; margin-left: 31%;">
+</nav>
+     </div>
     <br><br><br>
 <section class="section-content ml">
     <div class="container-fluied">

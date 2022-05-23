@@ -40,7 +40,7 @@ font-family: 'Patrick Hand', cursive;">
         <nav>
           <ul style="margin-right: 5%; font-family: 'Nunito', sans-serif;
 font-family: 'Patrick Hand', cursive; ">
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.php">Home</a></li>
             <li><a href="./product/product.php">Products</a></li>
             <li><a href="./Welcome/ContactUs.html">Contact Us</a></li>
             <li><a href="./Welcome/AboutUs.html">About US</a></li>
@@ -160,65 +160,6 @@ font-family: 'Patrick Hand', cursive; ">
 
   <!-- end of slider -->
 
-
-
-  <!-- ///////////////////////// -->
-  <!-- Store category -->
-  <!-- <div class="category_container"> -->
-  <!-- <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="./img/image-1.jpg" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>John Doe</h1>
-          <p>Architect & Engineer</p>
-          <p>We love that guy</p>
-        </div>
-      </div>
-    </div>
-    
-     <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="./img/image-4.jpg" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>John Doe</h1>
-          <p>Architect & Engineer</p>
-          <p>We love that guy</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="./img/image-5.jpg" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>John Doe</h1>
-          <p>Architect & Engineer</p>
-          <p>We love that guy</p>
-        </div>
-      </div>
-    </div>
-    <!--  -->
-  <!-- <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="./img/image-4.jpg" alt="Avatar" style="width:300px;height:300px;">
-        </div>
-        <div class="flip-card-back">
-          <h1>John Doe</h1>
-          <p>Architect & Engineer</p>
-          <p>We love that guy</p>
-        </div>
-      </div>
-    </div>
-    </div> 
-
-  </div> -->
   <div class="category-container">
     <div class="small-container-categort">
       <h2 style="margin-top: 30px;">Store category</h2>

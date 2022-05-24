@@ -33,33 +33,33 @@ if (isset($_GET['submit'])){
     }   
     
     if($loginEmail_correct && $loginPassword_correct){
-        header('location:index.php');
+        header('location:../index.php');
       
         $row['last-login']= date("d-m-Y - h:i:sa");
         
     }else
     echo '<script language="javascript">';
-    echo 'alert("Incorrect Information")'; 
+    echo 'alert("❌ Incorrect Information")'; 
     echo '</script>';
 
     
-    if($loginEmail=="admin@gmail.com"){
-		if($loginPassword== "AdminAdmin1"){
-            $loginEmail_result="<br><small style='color:white'>✅ Correct Email</small><br>";
-			$adminEmail_correct=true;
-			$adminPass_correct=true;
+  //   if($loginEmail=="admin@gmail.com"){
+	// 	if($loginPassword== "AdminAdmin1"){
+  //           $loginEmail_result="<br><small style='color:white'>✅ Correct Email</small><br>";
+	// 		$adminEmail_correct=true;
+	// 		$adminPass_correct=true;
 	
-		}else{
-			$loginPassword_result="<br><small style='color:white'>❌Incorrect Password</small><br>";
-	    	$adminPass_correct=false;
-		}
-	}else{
-		$loginEmail_result="<br><small style='color:white'>❌Incorrect Password or Email</small><br>";
-		$adminEmail_correct=false;
-	}
-	if ($adminEmail_correct && $adminPass_correct ){
-		header('location:index.php');
-	}
+	// 	}else{
+	// 		$loginPassword_result="<br><small style='color:white'>❌Incorrect Password</small><br>";
+	//     	$adminPass_correct=false;
+	// 	}
+	// }else{
+	// 	$loginEmail_result="<br><small style='color:white'>❌Incorrect Password or Email</small><br>";
+	// 	$adminEmail_correct=false;
+	// }
+	// if ($adminEmail_correct && $adminPass_correct ){
+	// 	header('location:index.php');
+	// }
 }
 ?>
 <!DOCTYPE html>
